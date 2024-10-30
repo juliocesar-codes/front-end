@@ -19,14 +19,7 @@ li {
     list-style: square;
 }
 
-#linha {
-    color: #242424;
-}
 
-.light-theme {
-    color: #242424;
-    background: green;
-}
 
 :root {
     --green: #009000;
@@ -37,11 +30,13 @@ li {
 .light-theme {
     --bg: var(--green);
     --fontColor: var(--black);
+    transition: .5s ease;
 }
 
 .dark-theme {
     --bg: var(--black);
     --fontColor: var(--green);
+    transition: .5s ease;
 }
 
 * {
@@ -68,6 +63,21 @@ body {
     border: none;
     color: var(--btnFontColor);
     background-color: var(--btnBg);
+
+    &:hover {
+        animation: pulse .5s linear infinite;
+    }
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .btn:focus {
